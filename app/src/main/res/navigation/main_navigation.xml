@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/list_fragment">
+
+    <fragment
+        android:id="@+id/list_fragment"
+        android:name="com.cst.taipeitour.ui.main.list.ListFragment"
+        tools:layout="@layout/fragment_list" >
+
+        <action
+            android:id="@+id/action_list_fragment_to_content_fragment"
+            app:destination="@id/content_fragment"
+            app:enterAnim="@anim/anim_slide_in_right"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/content_fragment"
+        android:name="com.cst.taipeitour.ui.main.content.ContentFragment"
+        tools:layout="@layout/fragment_content" >
+        <action
+            android:id="@+id/action_content_fragment_to_web_view_fragment"
+            app:destination="@id/web_view_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/web_view_fragment"
+        android:name="com.cst.taipeitour.ui.main.webView.WebViewFragment"
+        tools:layout="@layout/fragment_web_view" />
+
+</navigation>
